@@ -6,7 +6,7 @@ use bd_i202412137;
 
 create table tb_clientes (
 
-	id_cliente int primary key,
+	id_cliente int primary key AUTO_INCREMENT,
 	nom_empresa varchar(255),
 	ruc varchar(255) unique,
 	correo_empresa varchar(255)
@@ -15,13 +15,13 @@ create table tb_clientes (
 
 create table tb_tipoAuditoria (
 
-	id_tipoAuditoria int primary key,
+	id_tipoAuditoria int primary key AUTO_INCREMENT,
 	desc_tipoAuditoria varchar(50)
 	
 )
 
 create table tb_especialista(
-	id_especialista int primary key,
+	id_especialista int primary key AUTO_INCREMENT,
 	nom_especialista varchar(100),
 	dni int,
 	correo_especialista varchar(255),
@@ -30,7 +30,7 @@ create table tb_especialista(
 )
 
 create table tb_certificacion(
-	id_certificacion int primary key,
+	id_certificacion int primary key AUTO_INCREMENT,
 	id_cliente int,
 	id_tipoAuditoria int,
 	id_especialista int,
@@ -43,8 +43,6 @@ create table tb_certificacion(
 )	
 
 
-select * from tb_tipoAuditoria
-
 INSERT INTO tb_clientes VALUES
 (1, 'TechCorp S.A.', '20123456789', 'contacto@techcorp.com'),
 (2, 'Innova Group', '20234567890', 'info@innovagroup.pe'),
@@ -55,15 +53,10 @@ INSERT INTO tb_clientes VALUES
 INSERT INTO tb_tipoAuditoria VALUES
 (1, 'ISO/IEC 27001'),
 (2, 'SOC 2 Tipo II'),
-(3, 'PCI DSS'),
-(4, 'HIPAA'),
-(5, 'ISO 9001');
+(3, 'ISO/IEC 27018'),
+(4, 'ISO/IEC 22301'),
+(5, 'ISO/IEC 27017')
 
-select * from tb_tipoAuditoria;
-
-update tb_tipoAuditoria
-set desc_tipoAuditoria = "SOC 2 Tipo II"
-where id_tipoAuditoria = 5;
 
 INSERT INTO tb_especialista VALUES
 (1, 'Laura Ramírez', 44556677, 'laura.ramirez@empresa.com', 'Seguridad de la Información'),
