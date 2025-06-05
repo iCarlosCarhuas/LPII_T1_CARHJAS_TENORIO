@@ -1,0 +1,72 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package file
+*.jar
+*.war
+*.ear
+*.zip
+
+# Build artifacts
+target/
+bin/
+out/
+
+# IDE files
+.idea/
+*.iml
+.project
+.classpath
+*.ipr
+*.iws
+*.settings/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor backup files
+*~
+*.swp
+*.swo
+*.bak
+
+# Maven specific
+/target/
+pom.xml.tag
+pom.xml.releaseBackup
+*.versionsBackup
+dependency-reduced-pom.xml
+*.lastUpdated
+.mvn/
+/src/main/resources/
+
+# Gradle specific
+.gradle/
+build/
+*.lock
+
+# Eclipse specific
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+
+# IntelliJ IDEA specific
+*.iml
+.idea/
+*.ipr
+*.iws
+
+# NetBeans specific
+nbproject/
+build/
+
+# Other temporary files
+*.tmp
+*.cache
+
