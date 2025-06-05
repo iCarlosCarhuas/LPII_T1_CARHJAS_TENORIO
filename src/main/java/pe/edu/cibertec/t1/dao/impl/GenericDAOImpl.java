@@ -9,14 +9,14 @@ import java.util.List;
 
 import javax.persistence.Persistence;
 
-public abstract class GenericDAOImpl<T, ID> implements GenericDAO<T, ID> {
+public class GenericDAOImpl<T, ID> implements GenericDAO<T, ID> {
 
     protected EntityManagerFactory emf;
-    protected Class<T> entityClass;
+    protected Class<T> entityClass; 
 
     @SuppressWarnings("unchecked")
     public GenericDAOImpl() {
-        emf = Persistence.createEntityManagerFactory("S3");
+        emf = Persistence.createEntityManagerFactory("T1");
         ParameterizedType genericSuperclass = (ParameterizedType) getClass().getGenericSuperclass();
         this.entityClass = (Class<T>) genericSuperclass.getActualTypeArguments()[0];
     }

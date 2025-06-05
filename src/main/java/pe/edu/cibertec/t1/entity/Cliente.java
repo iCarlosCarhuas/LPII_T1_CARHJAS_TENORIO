@@ -38,6 +38,7 @@ public class Cliente implements Serializable {
 	public Cliente() {
 	}
 
+	public String toString() {return nomEmpresa;}
 
 	public Certificacion addTbCertificacion(Certificacion tbCertificacion) {
 		getTbCertificacions().add(tbCertificacion);

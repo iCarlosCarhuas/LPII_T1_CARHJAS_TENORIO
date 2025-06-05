@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-	<persistence-unit name="LPII_T1_CARHUAS_TENORIO">
+	<persistence-unit name="T1" transaction-type="RESOURCE_LOCAL">
+	
+		<class>pe.edu.cibertec.t1.entity.Cliente</class>
+		<class>pe.edu.cibertec.t1.entity.Certificacion</class>
+		<class>pe.edu.cibertec.t1.entity.Especialista</class>
+		<class>pe.edu.cibertec.t1.entity.Tipoauditoria</class>
+	
+		<properties>
+		
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.show_sql" value="true" />
+		
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bd_i202412137"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="admin"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+
+		</properties>
 	</persistence-unit>
 </persistence>

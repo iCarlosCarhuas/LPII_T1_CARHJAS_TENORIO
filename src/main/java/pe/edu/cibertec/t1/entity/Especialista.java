@@ -40,6 +40,8 @@ public class Especialista implements Serializable {
 	public Especialista() {
 	}
 
+	public String toString() {return nomEspecialista;}
+	
 	public Certificacion addTbCertificacion(Certificacion tbCertificacion) {
 		getTbCertificacions().add(tbCertificacion);
 		tbCertificacion.setTbEspecialista(this);

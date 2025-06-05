@@ -30,6 +30,7 @@ public class Tipoauditoria implements Serializable {
 	public Tipoauditoria() {
 	}
 
+	public String toString() {return desc_tipoAuditoria;}
 
 	public Certificacion addTbCertificacion(Certificacion tbCertificacion) {
 		getTbCertificacions().add(tbCertificacion);

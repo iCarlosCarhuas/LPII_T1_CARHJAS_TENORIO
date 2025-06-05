@@ -51,16 +51,6 @@ public class Certificacion implements Serializable {
 	public Certificacion() {
 	}
 
-	public void setTbEspecialista(Especialista tbEspecialista) {
-		this.tbEspecialista = tbEspecialista;
-	}
-
-	public Tipoauditoria getTbTipoauditoria() {
-		return this.tbTipoauditoria;
-	}
-
-	public void setTbTipoauditoria(Tipoauditoria tbTipoauditoria) {
-		this.tbTipoauditoria = tbTipoauditoria;
-	}
+	
 
 }
