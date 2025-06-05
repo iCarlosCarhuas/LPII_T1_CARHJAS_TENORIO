@@ -1,7 +1,10 @@
 package pe.edu.cibertec.t1.entity;
 
 import java.io.Serializable;
-import jakarta.persistence.*;
+import javax.persistence.*;
+
+import lombok.Data;
+
 import java.util.Date;
 
 
@@ -9,6 +12,7 @@ import java.util.Date;
  * The persistent class for the tb_certificacion database table.
  * 
  */
+@Data
 @Entity
 @Table(name="tb_certificacion")
 @NamedQuery(name="Certificacion.findAll", query="SELECT c FROM Certificacion c")
@@ -45,50 +49,6 @@ public class Certificacion implements Serializable {
 	private Tipoauditoria tbTipoauditoria;
 
 	public Certificacion() {
-	}
-
-	public int getIdCertificacion() {
-		return this.idCertificacion;
-	}
-
-	public void setIdCertificacion(int idCertificacion) {
-		this.idCertificacion = idCertificacion;
-	}
-
-	public String getEstado() {
-		return this.estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
-	public Date getFecEmision() {
-		return this.fecEmision;
-	}
-
-	public void setFecEmision(Date fecEmision) {
-		this.fecEmision = fecEmision;
-	}
-
-	public Date getFecVencimiento() {
-		return this.fecVencimiento;
-	}
-
-	public void setFecVencimiento(Date fecVencimiento) {
-		this.fecVencimiento = fecVencimiento;
-	}
-
-	public Cliente getTbCliente() {
-		return this.tbCliente;
-	}
-
-	public void setTbCliente(Cliente tbCliente) {
-		this.tbCliente = tbCliente;
-	}
-
-	public Especialista getTbEspecialista() {
-		return this.tbEspecialista;
 	}
 
 	public void setTbEspecialista(Especialista tbEspecialista) {
