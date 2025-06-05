@@ -35,6 +35,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 
 public class RegistroCertificacion extends JFrame {
 //services
@@ -43,17 +45,22 @@ public class RegistroCertificacion extends JFrame {
 	EspecialistaService especialistaService = new EspecialistaServiceImpl();
 	CertificacionService certificacionService = new CertificacionServiceImpl();
 	
-//Public GUI
-	JComboBox comboBoxCli;
-	JComboBox comboBoxAud;
-	JComboBox comboBoxEsp;
+	
+	
 	private static final long serialVersionUID = 1L;
+	
+	
 	private JPanel contentPane;
 	private JLabel lblNewLabel_2;
 	private JTextField txtFechaEmision;
 	private JTextField txtFechaVencimiento;
 	private JLabel lblNewLabel_3;
-
+	private JComboBox comboBoxCli;
+	private JComboBox comboBoxAud;
+	private JComboBox comboBoxEsp;
+	
+	private JTextArea textArea;
+	private JScrollPane scrollPane;
 	/**
 	 * Launch the application.
 	 */
@@ -133,6 +140,23 @@ public class RegistroCertificacion extends JFrame {
 		lblNewLabel_3.setBounds(10, 246, 91, 14);
 		contentPane.add(lblNewLabel_3);
 		
+		JButton btnListar = new JButton("Listar");
+		btnListar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				listar();
+			}
+		});
+		btnListar.setBounds(35, 370, 89, 23);
+		contentPane.add(btnListar);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(245, 30, 326, 401);
+		contentPane.add(scrollPane);
+		
+		textArea = new JTextArea();
+		scrollPane.setViewportView(textArea);
+		
 		llenarCombos();
 		
 	}
@@ -188,6 +212,23 @@ public class RegistroCertificacion extends JFrame {
 			JOptionPane.showMessageDialog(null, "Error en la fecha. Usa formato dd-MM-yyyy");
 
 			e.printStackTrace();
+		}
+	}
+	
+	void listar() {
+		textArea.setText(""); 
+		List<Certificacion> lista = certificacionService.conseguirTodo();
+		
+		for (Certificacion c : lista) {
+			textArea.append(
+				"Certificación N°: " + c.getIdCertificacion() + "\n" +
+				"Empresa Cliente: " + c.getTbCliente().getNomEmpresa() + "\n" +
+				"Tipo Auditoría: " + c.getTbTipoauditoria().getDesc_tipoAuditoria() + "\n" +
+				"Especialista Responsable: " + c.getTbEspecialista().getNomEspecialista() + "\n" +
+				"Fecha de Emisión: " + c.getFecEmision() + "\n" +
+				"Estado de la Certificación: " + c.getEstado() + "\n" +
+				"--------------------------------------------\n"
+			);
 		}
 	}
 }
