@@ -180,7 +180,7 @@ public class RegistroCertificacion extends JFrame {
 	void grabar() {
 		try {
 			String fechaTexto = txtFechaEmision.getText(); 
-			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 			Date fechaEmision = sdf.parse(fechaTexto);
 
